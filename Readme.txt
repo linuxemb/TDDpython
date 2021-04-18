@@ -62,3 +62,37 @@ FAILED (failures=1)
 Destroying test database for alias 'default'...
 
 (myenv) C:\myenv\superlists>
+
+
+=======view test
+
+(myenv) C:\myenv\superlists>python manage.py test
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+E.
+======================================================================
+ERROR: test_home_page_returns_correct_html (lists.tests.HomePagetest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\myenv\superlists\lists\tests.py", line 19, in test_home_page_returns_correct_html
+    response=home_page(request)
+TypeError: home_page() takes 0 positional arguments but 1 was given
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+FAILED (errors=1)
+Destroying test database for alias 'default'...
+
+
+=========after update views.py
+def home_page(request):
+    return HttpResponse('<html><title>To-Do lists</title></html>')
+
+
+(myenv) C:\myenv\superlists>python manage.py test
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
