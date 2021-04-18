@@ -1,0 +1,5 @@
+"**.pyc" 
+
+"geckodriver.log"
+"lists/__pycache__/"
+"superlists/__pycache__" 
